@@ -110,3 +110,12 @@ PROC FREQ DATA=work.cms_tx_clean;
     TABLES setting is_drug / MISSING;
 RUN;
 TITLE;
+
+/*saving the dataset*/
+/* Point permanent library 'proj' to your home directory */
+LIBNAME proj '/home/u63988430';
+
+/* Save cleaned Texas table permanently */
+DATA proj.cms_tx_clean;
+    SET work.cms_tx_clean;
+RUN;
